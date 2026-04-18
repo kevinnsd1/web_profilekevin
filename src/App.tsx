@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { WorkExperience } from "./components/WorkExperience";
 import { Expertise } from "./components/Expertise";
 import { Projects } from "./components/Projects";
 import { motion } from "framer-motion";
@@ -26,6 +27,16 @@ function App() {
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 py-20 sm:py-32 flex flex-col justify-center min-h-screen">
         <Header />
+
+        <motion.hr
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="border-neutral-800/50 my-24 origin-left"
+        />
+
+        <WorkExperience />
 
         <motion.hr
           initial={{ opacity: 0, scaleX: 0 }}
