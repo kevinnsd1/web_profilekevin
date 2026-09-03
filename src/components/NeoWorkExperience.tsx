@@ -4,6 +4,7 @@ import { NeoCard, NeoBadge } from "./neobrutalism";
 import infiniteLearningLogo from "../assets/image/infinitelearning.jpg";
 import skyeLogo from "../assets/image/skye.jpg";
 import nolimitLogo from "../assets/image/nolimit.png";
+import awhLogo from "../assets/image/awh.png";
 
 interface ExperienceItem {
   id: string;
@@ -19,6 +20,19 @@ interface ExperienceItem {
 }
 
 const experiences: ExperienceItem[] = [
+  {
+    id: "awh",
+    period: "MEI 2025 – PRESENT",
+    company: "PT AWH",
+    role: "Front End Engineer",
+    location: "Bandung, Jawa Barat",
+    description:
+      "PT AWH adalah perusahaan solusi perangkat lunak enterprise & digital. Berperan sebagai Front End Engineer dalam membangun dan mengoptimalkan antarmuka sistem enterprise yang responsif serta interaktif dengan stack modern React, TypeScript, Angular, serta integrasi layanan backend PHP Laravel.",
+    logo: awhLogo,
+    badgeVariant: "green",
+    cardBg: "white",
+    tags: ["React", "TypeScript", "Angular", "PHP", "Laravel", "REST API", "Tailwind CSS"],
+  },
   {
     id: "nolimit",
     period: "DES 2025 – APR 2026",
@@ -80,7 +94,7 @@ export function NeoWorkExperience() {
         </div>
 
         <NeoBadge variant="pink" rotate="right" size="md" icon={<Sparkles size={14} />}>
-          3+ ROLES EXECUTED
+          4+ ROLES EXECUTED
         </NeoBadge>
       </div>
 

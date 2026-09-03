@@ -4,6 +4,7 @@ import { fadeUp, staggerContainer } from "../utils/animations";
 import infiniteLearningLogo from "../assets/image/infinitelearning.jpg";
 import skyeLogo from "../assets/image/skye.jpg";
 import nolimitLogo from "../assets/image/nolimit.png";
+import awhLogo from "../assets/image/awh.png";
 
 interface ExperienceItem {
   period: string;
@@ -21,6 +22,21 @@ interface ExperienceItem {
 }
 
 const experiences: ExperienceItem[] = [
+  {
+    period: "Mei 2025 – Present",
+    company: "PT AWH",
+    role: "Front End Engineer",
+    location: "Bandung, Jawa Barat",
+    description:
+      "PT AWH adalah perusahaan solusi perangkat lunak enterprise & digital. Berperan sebagai Front End Engineer dalam membangun dan mengoptimalkan antarmuka sistem enterprise yang responsif serta interaktif dengan stack modern React, TypeScript, Angular, serta integrasi layanan backend PHP Laravel.",
+    logo: awhLogo,
+    accentColor: "emerald",
+    glowColor: "rgba(16,185,129,0.25)",
+    borderColor: "border-emerald-500/30",
+    bgColor: "bg-emerald-500/10",
+    textColor: "text-emerald-400",
+    tags: ["React", "TypeScript", "Angular", "PHP", "Laravel"],
+  },
   {
     period: "Des 2025 – Apr 2026",
     company: "Nolimit Indonesia",
