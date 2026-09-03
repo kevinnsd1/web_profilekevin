@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NeoModal, NeoInput, NeoTextarea, NeoButton, NeoBadge } from "./neobrutalism";
 import { Send, CheckCircle2, Sparkles } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../utils/translations";
 
 interface NeoContactModalProps {
   isOpen: boolean;
@@ -11,6 +13,9 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
   isOpen,
   onClose,
 }) => {
+  const { lang } = useLanguage();
+  const t = translations[lang].contactModal;
+
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +38,7 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
     <NeoModal
       isOpen={isOpen}
       onClose={onClose}
-      title="GET IN TOUCH // SAY HELLO"
+      title={t.title}
       headerBg="yellow"
       maxWidth="lg"
     >
@@ -43,35 +48,35 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
             <CheckCircle2 size={36} strokeWidth={3} />
           </div>
           <NeoBadge variant="green" size="lg" rotate="right">
-            MESSAGE SENT SUCCESSFULLY!
+            {t.successTitle}
           </NeoBadge>
           <h3 className="font-heading font-black text-2xl uppercase">
-            Thanks for reaching out!
+            {t.thanks}
           </h3>
           <p className="text-sm font-bold text-neutral-600 max-w-sm">
-            I've received your message and will reply to your email as soon as possible.
+            {t.successDesc}
           </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="flex items-center gap-2 mb-2">
             <NeoBadge variant="pink" rotate="left" icon={<Sparkles size={14} />}>
-              LET'S BUILD TOGETHER
+              {t.badge}
             </NeoBadge>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <NeoInput
-              label="Your Name"
-              placeholder="e.g. Alex Rivera"
+              label={t.nameLabel}
+              placeholder={t.namePlaceholder}
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             />
             <NeoInput
-              label="Your Email"
+              label={t.emailLabel}
               type="email"
-              placeholder="alex@company.com"
+              placeholder={t.emailPlaceholder}
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -79,16 +84,16 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
           </div>
 
           <NeoInput
-            label="Subject"
-            placeholder="Project inquiry / Freelance / Hello"
+            label={t.subjectLabel}
+            placeholder={t.subjectPlaceholder}
             required
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
           />
 
           <NeoTextarea
-            label="Message"
-            placeholder="Tell me about your project, timeline, or idea..."
+            label={t.messageLabel}
+            placeholder={t.messagePlaceholder}
             required
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -102,7 +107,7 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
               shadowSize="sm"
               onClick={onClose}
             >
-              CANCEL
+              {t.cancel}
             </NeoButton>
             <NeoButton
               type="submit"
@@ -111,7 +116,7 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
               shadowSize="md"
               icon={<Send size={18} />}
             >
-              SEND MESSAGE
+              {t.send}
             </NeoButton>
           </div>
         </form>

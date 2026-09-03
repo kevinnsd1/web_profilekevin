@@ -1,21 +1,17 @@
 import { NeoMarquee, NeoBadge, NeoButton } from "./neobrutalism";
 import { Mail, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./icons/SocialIcons";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../utils/translations";
 
 export function NeoFooter() {
+  const { lang } = useLanguage();
+  const t = translations[lang].footer;
+
   return (
     <footer className="space-y-12 pt-16 pb-12 border-t-4 border-black">
       {/* Ticker Banner focused on Kevin */}
-      <NeoMarquee
-        items={[
-          "FRONTEND ENGINEER & WEB DEVELOPER",
-          "REACT, TYPESCRIPT & NEXT.JS SPECIALIST",
-          "BUILDING HIGH-PERFORMANCE DASHBOARDS & WEB APPS",
-          "AVAILABLE FOR FREELANCE & FULLTIME ROLES",
-          "CRAFTING CLEAN & RELIABLE CODE",
-        ]}
-        bg="yellow"
-      />
+      <NeoMarquee items={t.marquee} bg="yellow" />
 
       {/* Footer Content */}
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
@@ -29,7 +25,7 @@ export function NeoFooter() {
             </NeoBadge>
           </div>
           <p className="text-sm font-bold text-neutral-400">
-            Frontend Engineer & Web Developer based in Indonesia.
+            {t.bio}
           </p>
         </div>
 
@@ -41,7 +37,7 @@ export function NeoFooter() {
             shadowSize="sm"
             icon={<Mail size={16} />}
           >
-            EMAIL ME
+            {t.emailMe}
           </NeoButton>
           <NeoButton
             href="https://github.com/kevinnsd1"
@@ -52,7 +48,7 @@ export function NeoFooter() {
             shadowSize="sm"
             icon={<GithubIcon size={16} />}
           >
-            GITHUB
+            {t.github}
           </NeoButton>
           <NeoButton
             href="https://linkedin.com/in/kevinsatriad"
@@ -63,7 +59,7 @@ export function NeoFooter() {
             shadowSize="sm"
             icon={<LinkedinIcon size={16} />}
           >
-            LINKEDIN
+            {t.linkedin}
           </NeoButton>
         </div>
       </div>
@@ -72,7 +68,7 @@ export function NeoFooter() {
         <span>© {new Date().getFullYear()} KEVIN SATRIA</span>
         <span>•</span>
         <span className="flex items-center gap-1 text-[#FFE600]">
-          CRAFTED WITH PASSION & CODE <Sparkles size={12} />
+          {t.craftedWith} <Sparkles size={12} />
         </span>
       </div>
     </footer>
