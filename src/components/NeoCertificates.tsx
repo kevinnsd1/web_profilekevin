@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Eye, Sparkles, ArrowLeft, ExternalLink, CheckCircle } from "lucide-react";
+import { Award, Eye, Sparkles, ExternalLink, CheckCircle } from "lucide-react";
 import { NeoCard, NeoBadge, NeoTabs, NeoModal, NeoButton } from "./neobrutalism";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
@@ -66,11 +66,7 @@ const certificatesData: CertItemBase[] = [
   },
 ];
 
-interface NeoCertificatesProps {
-  onBackToPortfolio?: () => void;
-}
-
-export function NeoCertificates({ onBackToPortfolio }: NeoCertificatesProps) {
+export function NeoCertificates() {
   const { lang } = useLanguage();
   const { theme } = useTheme();
   const t = translations[lang].certificates;

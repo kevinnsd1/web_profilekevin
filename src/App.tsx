@@ -74,7 +74,7 @@ function MainApp() {
               className="space-y-12"
             >
               <NeoHeader onNavigate={navigateTo} currentRoute={route} />
-              <NeoCertificates onBackToPortfolio={() => navigateTo("home")} />
+              <NeoCertificates />
               <NeoFooter />
             </motion.div>
           ) : (
