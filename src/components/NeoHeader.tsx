@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Download, Sparkles, Terminal, Code2 } from "lucide-react";
+import { Mail, Download, Terminal, Code2 } from "lucide-react";
 import { NeoButton, NeoBadge } from "./neobrutalism";
 import { NeoContactModal } from "./NeoContactModal";
 import { GithubIcon, LinkedinIcon } from "./icons/SocialIcons";
@@ -14,8 +14,8 @@ export function NeoHeader() {
     <div className="relative pt-6 pb-12">
       {/* Decorative Floating Stickers */}
       <div className="hidden lg:block absolute top-0 -right-4 z-10 pointer-events-none">
-        <NeoBadge variant="pink" rotate="right-lg" size="lg" icon={<Sparkles size={16} />}>
-          CREATIVE DEVELOPER 🚀
+        <NeoBadge variant="pink" rotate="right-lg" size="lg" icon={<Code2 size={16} />}>
+          CREATIVE DEVELOPER
         </NeoBadge>
       </div>
 

@@ -118,8 +118,9 @@ export function NeoWorkExperience() {
                       <h3 className="font-heading font-black text-xl text-black uppercase tracking-tight">
                         {exp.company}
                       </h3>
-                      <p className="font-extrabold text-sm text-[#FF2E93] uppercase tracking-wide">
-                        ⚡ {exp.role}
+                      <p className="font-extrabold text-sm text-[#FF2E93] uppercase tracking-wide flex items-center gap-1.5">
+                        <Briefcase size={14} />
+                        {exp.role}
                       </p>
                     </div>
 

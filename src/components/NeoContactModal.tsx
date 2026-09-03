@@ -33,7 +33,7 @@ export const NeoContactModal: React.FC<NeoContactModalProps> = ({
     <NeoModal
       isOpen={isOpen}
       onClose={onClose}
-      title="⚡ GET IN TOUCH // SAY HELLO"
+      title="GET IN TOUCH // SAY HELLO"
       headerBg="yellow"
       maxWidth="lg"
     >

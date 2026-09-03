@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import { fadeUp, staggerContainer } from "../utils/animations";
 import infiniteLearningLogo from "../assets/image/infinitelearning.jpg";
 import skyeLogo from "../assets/image/skye.jpg";
@@ -150,8 +151,8 @@ export function WorkExperience() {
                         {exp.role}
                       </span>
                       <span className="text-neutral-600">·</span>
-                      <span className="text-xs text-neutral-500">
-                        📍 {exp.location}
+                      <span className="text-xs text-neutral-500 inline-flex items-center gap-1">
+                        <MapPin size={12} /> {exp.location}
                       </span>
                     </div>
 

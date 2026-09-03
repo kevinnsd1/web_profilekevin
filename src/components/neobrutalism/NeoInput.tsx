@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+import { AlertCircle } from "lucide-react";
 
 export interface NeoInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -70,8 +71,8 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
         </div>
 
         {error && (
-          <p className="text-xs font-black text-[#FF4757] tracking-tight mt-0.5">
-            ⚠ {error}
+          <p className="text-xs font-black text-[#FF4757] tracking-tight mt-0.5 flex items-center gap-1">
+            <AlertCircle size={12} /> {error}
           </p>
         )}
 
@@ -138,8 +139,8 @@ export const NeoTextarea = forwardRef<HTMLTextAreaElement, NeoTextareaProps>(
         />
 
         {error && (
-          <p className="text-xs font-black text-[#FF4757] tracking-tight mt-0.5">
-            ⚠ {error}
+          <p className="text-xs font-black text-[#FF4757] tracking-tight mt-0.5 flex items-center gap-1">
+            <AlertCircle size={12} /> {error}
           </p>
         )}
 

@@ -247,7 +247,7 @@ export function NeoShowcase() {
       <NeoModal
         isOpen={isTestModalOpen}
         onClose={() => setIsTestModalOpen(false)}
-        title="⚡ TEST MODAL WINDOW // NEO-BRUTALISM"
+        title="TEST MODAL WINDOW // NEO-BRUTALISM"
         headerBg="pink"
         maxWidth="md"
         footer={
